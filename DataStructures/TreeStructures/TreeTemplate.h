@@ -23,4 +23,5 @@ struct Binary_node {
 template <class Entry>
 Binary_tree<Entry>::Binary_tree() {
   root = NULL;
-}
+};
+
