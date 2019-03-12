@@ -30,7 +30,7 @@ class Binary_tree {
   void levelOrder(void (*visit)(Binary_node<Entry> *&));
   // constructor
   Binary_tree(const Binary_tree<Entry> &origin);  // copy constructor
-  ~Binary_tree();                                 // deconstructor
+  ~Binary_tree();                                 // destructor
 
   // operation overlodes
   Binary_tree &operator=(const Binary_tree<Entry> &origin);
@@ -46,8 +46,9 @@ class Binary_tree {
                          void (*visit)(Binary_node<Entry> *&));
   void recursive_postorder(Binary_node<Entry> *sub_root,
                            void (*visit)(Binary_node<Entry> *&));
-  void countNodes(const Binary_node<Entry> *&);
-  void countHeight(Binary_node<Entry> *);
-  void destroyNode(Binary_node<Entry> *);
+  void countNodes(Binary_node<Entry> *&);
+  void countHeight(Binary_node<Entry> *&);
+  void destroyNode(Binary_node<Entry> *&);
+  void recursive_copy(Binary_node<Entry> *&copyTree,
+                      Binary_node<Entry> *&originNode);
 };
-
