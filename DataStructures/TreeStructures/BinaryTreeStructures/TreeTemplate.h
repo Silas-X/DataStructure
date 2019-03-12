@@ -1,4 +1,15 @@
 template <class Entry>
+struct Binary_node {
+  // data members;
+  Entry data;
+  Binary_node<Entry> *left;
+  Binary_node<Entry> *right;
+  // constructors
+  Binary_node();
+  Binary_node(const Entry &x);
+};
+
+template <class Entry>
 class Binary_tree {
  public:
   Binary_tree();
@@ -25,7 +36,7 @@ class Binary_tree {
   Binary_tree &operator=(const Binary_tree<Entry> &origin);
 
  private:
-  struct Binary_node<Entry> root;
+  Binary_node<Entry> root;
   int treeSize;
   int treeHeight;
   // auxiliary function
@@ -36,17 +47,7 @@ class Binary_tree {
   void recursive_postorder(Binary_node<Entry> *sub_root,
                            void (*visit)(Binary_node<Entry> *&));
   void countNodes(const Binary_node<Entry> *&);
-  void countHeight(const Binary_node<Entry> *&);
-  void destroyNode(const Binary_node<Entry> *&);
+  void countHeight(Binary_node<Entry> *);
+  void destroyNode(Binary_node<Entry> *);
 };
 
-template <class Entry>
-struct Binary_node {
-  // data members;
-  Entry data;
-  Binary_node<Entry> *left;
-  Binary_node<Entry> *right;
-  // constructors
-  Binary_node();
-  Binary_node(const Entry &x);
-};
