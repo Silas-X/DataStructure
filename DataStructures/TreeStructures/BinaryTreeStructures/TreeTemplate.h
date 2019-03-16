@@ -1,13 +1,4 @@
-template <class Entry>
-struct Binary_node {
-  // data members;
-  Entry data;
-  Binary_node<Entry> *left;
-  Binary_node<Entry> *right;
-  // constructors
-  Binary_node();
-  Binary_node(const Entry &x);
-};
+
 
 template <class Entry>
 class Binary_tree {
@@ -51,4 +42,15 @@ class Binary_tree {
   void destroyNode(Binary_node<Entry> *&);
   void recursive_copy(Binary_node<Entry> *&copyTree,
                       Binary_node<Entry> *&originNode);
+};
+
+template <class Entry>
+struct Binary_node {
+  // data members;
+  Entry data;
+  Binary_node<Entry> *left;
+  Binary_node<Entry> *right;
+  // constructors
+  Binary_node();
+  Binary_node(const Entry &x);
 };
